@@ -2,6 +2,7 @@
 #define ROBOTOMYREQUESTFORM_H
 
 #include "AForm.h"
+#include <iostream>
 
 class RobotomyRequestForm : public AForm {
     private:
@@ -13,8 +14,6 @@ class RobotomyRequestForm : public AForm {
         ~RobotomyRequestForm();
         RobotomyRequestForm &operator=(RobotomyRequestForm const &form);
         void execute(Bureaucrat const &executor) const;
-    
 };
 
 #endif
-

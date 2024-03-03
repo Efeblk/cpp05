@@ -17,30 +17,22 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(ShrubberyCreationForm co
 }
 
 void ShrubberyCreationForm::execute(Bureaucrat const &Bureaucrat) const {
-    if (this->getSigned() == false) {
-        throw FormNotSignedException();
-    }
-    else if (Bureaucrat.getGrade() > this->getGradeToExecute()) {
-        throw GradeTooLowException();
-    }
-    else
-    {
-        std::ofstream file;
-        file.open(_target + "_shrubbery");
-        file << "      /\\      " << std::endl;
-        file << "     /\\*\\     " << std::endl;
-        file << "    /\\O\\*\\    " << std::endl;
-        file << "   /*/\\/\\/\\   " << std::endl;
-        file << "  /\\O\\/\\*\\/\\  " << std::endl;
-        file << " /\\*\\/\\*\\/\\/\\ " << std::endl;
-        file << "/\\O\\/\\/*/\\/O/\\" << std::endl;
-        file << "      ||      " << std::endl;
-        file <<      "      ||      " << std::endl;
-        file <<      "      ||      " << std::endl;
-        file << "      ||      " << std::endl;
-        file << "      ||      " << std::endl;
-        file << "      ||      " << std::endl;
-        file << "     /||\\     " << std::endl;
-        file.close();
-    }
+    AForm::execute(Bureaucrat);
+    std::ofstream file;
+    file.open(_target + "_shrubbery");
+    file << "      /\\      " << std::endl;
+    file << "     /\\*\\     " << std::endl;
+    file << "    /\\O\\*\\    " << std::endl;
+    file << "   /*/\\/\\/\\   " << std::endl;
+    file << "  /\\O\\/\\*\\/\\  " << std::endl;
+    file << " /\\*\\/\\*\\/\\/\\ " << std::endl;
+    file << "/\\O\\/\\/*/\\/O/\\" << std::endl;
+    file << "      ||      " << std::endl;
+    file <<      "      ||      " << std::endl;
+    file <<      "      ||      " << std::endl;
+    file << "      ||      " << std::endl;
+    file << "      ||      " << std::endl;
+    file << "      ||      " << std::endl;
+    file << "     /||\\     " << std::endl;
+    file.close();
 }

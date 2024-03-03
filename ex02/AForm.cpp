@@ -46,10 +46,30 @@ int AForm::getGradeToExecute() const {
     return _gradeToExecute;
 }
 
-void AForm::beSigned(Bureaucrat &bureaucrat) {
+void AForm::beSigned(Bureaucrat &bureaucrat) 
+{
     if (bureaucrat.getGrade() > _gradeToSign)
         throw AForm::GradeTooLowException();
-    _signed = true;
+    else if (_signed == true)
+        std::cout << "Form " << _name << " is already signed\n";
+    else
+    {
+        std::cout << "Form " << _name << " has been signed by " << bureaucrat.getName() << "\n";
+        _signed = true;
+    }
+}
+
+void AForm::execute(Bureaucrat const &executor) const {
+    if (_signed == false) {
+        throw FormNotSignedException();
+    }
+    else if (executor.getGrade() > _gradeToExecute) {
+        throw GradeTooLowException();
+    }
+    else
+    {
+        std::cout << "Form " << _name << " has been executed by " << executor.getName() << "\n";
+    }
 }
 
 AForm::~AForm() {}
