@@ -1,7 +1,7 @@
 NAME		= bureaucrat
 CPP			= c++
 CPPFLAGS	= -Wall -Wextra -Werror -g -std=c++98
-SOURCE		= main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
+SOURCE		= main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp Intern.cpp PresidentialPardonForm.cpp
 OBJS		= $(SOURCE:.cpp=.o)
 
 all: $(NAME)

@@ -18,7 +18,6 @@ int main(int argc, const char** argv)
     }
     catch(Bureaucrat::GradeTooHighException& e)
     {
-        std::cout << "test 12 \n";
         std::cerr << e.what() << '\n';
     }
     try
