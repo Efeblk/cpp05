@@ -15,6 +15,8 @@ int main()
         Intern someRandomIntern;
         AForm* rrf;
         rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+        AForm* rrf2;
+        rrf2 = someRandomIntern.makeForm("FOO", "Bender");
         b1.signForm(f1);
         b2.signForm(f1);
         b1.executeForm(f1);

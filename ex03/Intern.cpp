@@ -21,6 +21,10 @@ Intern &Intern::operator=(Intern const &intern) {
 
 Intern::~Intern() {}
 
+const char *Intern::WrongFormNameException::what() const throw() {
+    return "Wrong form name";
+}
+
 AForm *Intern::makeForm(std::string formName, std::string target) {
     size_t size = sizeof(_formNames) / sizeof(_formNames[0]); 
     for (size_t i = 0; i < size; i++)
@@ -39,6 +43,6 @@ AForm *Intern::makeForm(std::string formName, std::string target) {
             }
         }
     }
-    std::cout << "Form name not found" << std::endl;
+    throw Intern::WrongFormNameException();
     return NULL;
 }

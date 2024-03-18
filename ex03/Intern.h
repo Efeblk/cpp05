@@ -15,6 +15,9 @@ public:
     Intern &operator=(Intern const &intern);
     ~Intern();
     AForm *makeForm(std::string formName, std::string target);
+    class	WrongFormNameException: public std::exception{
+		virtual const char *what() const throw();
+	};
 };
 
 #endif
